@@ -18,6 +18,14 @@ Note: n, p will always be given as strictly positive integers.
 */
 
 
+//SOLUTION 1 
+function digPow(n, p) {
+  var x = String(n).split("").reduce((s, d, i) => s + Math.pow(d, p + i), 0)
+  return x % n ? -1 : x / n
+}
+
+//SOLUTION 2
+
 function digPow(n, p){
   var digits = n.toString().split('');
   var result = 0;
@@ -36,3 +44,31 @@ function digPow(n, p){
 digPow((89, 1), 1);
 digPow((92, 1), -1);
 digPow((46288, 3), 51);
+
+//SOLUTION 3
+
+function digPow(n, p){
+  var ans = (''+n).split('')
+    .map(function(d,i){return Math.pow(+d,i+p) })
+    .reduce(function(s,v){return s+v}) / n
+  return ans%1 ? -1 : ans    
+}//z.
+
+
+
+//number to string method converts a number to a string
+/*
+var num = 15;
+var n = num.toString();
+
+//split method 
+//The split() method is used to split a string into an array of substrings, and returns the new array.
+
+//Tip: If an empty string ("") is used as the separator, the string is split between each character.
+
+//Note: The split() method does not change the original string.
+
+var str = "How are you doing today?";
+var res = str.split(" ");
+
+*/
