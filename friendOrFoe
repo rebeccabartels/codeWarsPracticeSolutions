@@ -4,6 +4,41 @@ If a name has 4 letters in it, you can be sure that it has to be a friend of you
 Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]
 */
 
+// SOLUTION 1 
 function friend (friends){
   return friends.filter(x => x.length == 4);
 }
+
+
+//SOLUTION 2
+
+function friend(friends){
+  return friends.filter(n => n.length === 4)
+}
+
+//SOLUTION 3
+
+const friend = friends => friends.filter(friend => friend.length == 4);
+
+//SOLUTION 4
+function friend(friends){
+  
+  //Create new array called "myFriends" to add your friends
+  var i,
+      len = friends.length,
+      myFriends = [];
+  
+  
+  for (i = 0; i < len; i++) {
+        
+       //Check for names with length equal to four and it is not a number
+       if(friends[i].length == 4 && isNaN(friends[i])) {
+          myFriends.push(friends[i]);
+       }
+      
+  }
+    
+  return myFriends;
+}
+
+
